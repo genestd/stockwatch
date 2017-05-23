@@ -1,0 +1,213 @@
+I am having trouble getting a sticky nav with off canvas menu to work.  Here's what I'm trying to do:
+
+Sticky title-bar with nav containing links to sections on the same page
+Responsive on small screens - change to a hamburger icon with off-canvas right menu
+When the page loads, the title-bar is sticky.  This works fine if you are just scrolling up and down the page.  It works for both full-size and small screens.  However, if you click a link in the title-bar or off-canvas menu, then the scrolling gets broken.  The page will navigate to the linked section, but then you can't manually scroll back up.  The body of the page seems to stay the same size, with additional whitespace on the bottom to make up for the missing top section.  However if you click the link to go "home", then the page will navigate back to the top.  So links work, but scrolling is broken once they have been clicked.
+
+Here's my code:
+
+<div class="off-canvas-wrapper" id="home">
+
+  <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+
+    <!-- Your menu or Off-canvas content goes here -->
+
+    <ul>
+
+      <li><a href="#page">Home</a></li>
+
+      <li><a href="#main">Chart</a></li>
+
+      <li><a href="#form">Add/Remove</a></li>
+
+    </ul>
+
+  </div>
+
+
+
+  <div class="off-canvas-content" data-off-canvas-content id="page">
+
+    <!-- DESKTOP NAVIGATION -->
+
+    <nav class="desktop-nav" data-sticky-container>
+
+      <div class="title-bar sticky" data-sticky data-margin-top='0' data-top-anchor="page:top" data-btm-anchor="footer:bottom" data-options="stickyOn: small">
+
+        <div class="title-bar-left">
+
+          <img src="/img/dg_logo.png"/>
+
+        </div>
+
+        <div class="title-bar-right">
+
+          <ul>
+
+            <li><a href="#page">Home</a></li>
+
+            <li><a href="#main">Chart</a></li>
+
+            <li><a href="#form">Add/Remove</a></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+    <nav class="mobile-nav" data-sticky-container>
+
+    <!-- MOBILE NAVIGATION -->
+
+      <div class="title-bar sticky" data-sticky data-margin-top='0' data-top-anchor="page:top" data-btm-anchor="footer:bottom" data-options="stickyOn: small">
+
+        <div class="title-bar-left">
+
+          <img src="/img/dg_logo.png"/>
+
+        </div>
+
+        <div class="title-bar-right">
+
+          <button class="menu-icon" type="button" data-open="offCanvas"></button>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+    <!------------------------------------------------------------->
+
+    <!-- HERO -->
+
+    <section class="hero" id="hero">
+
+      Latest quotes: <span id="timestamp"></span>
+
+      <canvas class="marquee" id='marquee'>
+
+      </canvas>
+
+
+
+
+
+    </section>
+
+
+
+    <section class="main" id="main">
+
+      <!-- d3.js chart goes here -->
+
+    </section>
+
+
+
+    <section id="form">
+
+      <div class="row">
+
+        <div class="medium-6 columns">
+
+          <!-- Live Search Form for stock tickers -->
+
+          <form id="frmAddStock">
+
+            <fieldset class="fieldset">
+
+              <legend>Add Symbol</legend>
+
+              <input type="text" placeholder="Enter Stock Ticker" id="inputAddStock" data-toggle="drop">
+
+                <ul id="drop" class="dropdown-pane" data-dropdown data-close-on-click="true">
+
+                  <li>test</li>
+
+                </ul>
+
+              <input type="submit" class="button" value="Add" id="btnAddStock">
+
+              <div class="success callout hide" data-toggler=".hide" id='add-callout'>
+
+                <p id="add-message"></p>
+
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-toggle='add-callout' id="add-toggle">
+
+                  <span aria-hidden="true">&times;</span>
+
+                </button>
+
+              </div>
+
+            </fieldset>
+
+          </form>
+
+          <!-- End Live Search Form -->
+
+        </div>
+
+        <div class="medium-6 columns">
+
+          <form id="frmRemoveStock">
+
+            <fieldset class="fieldset">
+
+              <legend>Remove Symbol</legend>
+
+              <select id="removeStock">
+
+              </select>
+
+              <input type="submit" class="button" value="Remove" id="btnRemoveStock">
+
+              <div class="success callout hide" data-toggler=".hide" id='remove-callout'>
+
+                <p id="remove-message">Ticker removed</p>
+
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-toggle='remove-callout' id="remove-toggle">
+
+                  <span aria-hidden="true">&times;</span>
+
+                </button>
+
+              </div>
+
+            </fieldset>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+
+
+
+    <footer class="clearfix" id="footer">
+
+      <div class="float-left text-center">
+
+        <div>&copy;2017 David Genest</div>
+
+      </div>
+
+      <div class="float-right text-center">
+
+        <div>Credits</div>
+
+      </div>
+
+    </footer>
+
+  </div> <!-- end of off canvas content -->
+
+</div>  <!-- end of off canvas wrapper -->

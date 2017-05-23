@@ -1,0 +1,176 @@
+body{
+  overflow: auto;
+}
+/**************************
+* DESKTOP NAV
+**************************/
+.sticky{
+  width: 100%;
+}
+.top-bar{
+  color: rgba(255,255,255,.8);
+  background-color: #34495e;
+  height: 75px;
+  line-height: 75px;
+  padding: 0 15px;
+  font-weight: bold;
+}
+.top-bar-left img{
+  background-color: #fff;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  margin-bottom: 5px;
+}
+.top-bar ul{
+  background: transparent;
+}
+.top-bar-right li,
+.top-bar-right a{
+  color: #fff;
+  display: inline-block;
+  line-height: 75px;
+  padding: 0 15px;
+}
+/**************************
+* Mobile NAV
+**************************/
+.off-canvas{
+  background-color: #34495e;
+}
+.off-canvas li{
+  list-style: none;
+}
+.off-canvas a{
+  color: #fff;
+}
+/**************************
+* HERO
+**************************/
+
+.hero{
+  margin-top: -75px;
+  padding: 210px 40px 60px 40px;
+  color: rgba(0,0,0,.8);
+  background-color: #44afe7;;
+  background-image: url("https://www.transparenttextures.com/patterns/nice-snow.png")
+}
+.marquee{
+  background-color: rgba(0,0,0,.8);
+  font-size: 12px;
+  width: 100%;
+}
+/**************************
+* MAIN
+**************************/
+.main{
+  padding-top: 75px;
+  margin-top: -75px;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  height: 100vh;
+  background-color: rgba(0,0,0,.8);
+}
+.axis, .axis path, .axis line{
+  stroke: rgba(255,255,255, .8);
+  font-size: 14px;
+}
+.axis text{
+  fill: rgba(255,255,255,.8);
+  stroke: rgba(255,255,255, .8);
+}
+.axisLabel, .chartTitle{
+  fill: rgba(255,255,255, .8);
+  font-size: 20px;
+}
+.fieldset legend{
+  background: transparent;
+}
+.fieldset ul{
+  list-style: none;
+}
+.help-text{
+  color: red;
+}
+#drop{
+  min-height: 10px;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+/**************************
+* CHART/SVG styles
+**************************/
+.tick{
+  text-anchor: end;
+}
+.chartTitle{
+  fill: rgba(255,255,255,.8);
+  text-anchor: middle;
+}
+.button rect{
+  cursor: pointer;
+  fill: rgba(52,73,94, 1);
+  stroke: rgba(255,255,255,.8);
+}
+.button rect:hover{
+  fill: rgba(52,73,94, .4);
+}
+.button text{
+  pointer-events: none;
+  text-anchor: middle;
+  fill: rgba(255,255,255,.8);
+}
+.mouse-line{
+  stroke: rgba(255,255,255,.7);
+  stroke-width: 1px;
+  opacity: 0;
+}
+.mouse-line-text{
+  fill: rgba(255,255,255,.8);
+}
+.mouse-per-line circle{
+  stroke-width: 1px;
+  opacity: 0;
+}
+.line{
+  fill: none;
+  opacity: 0;
+  stroke-width: 2;
+}
+.tip{
+  opacity: 0;
+  fill: rgba(255,255,255,.8);
+  stroke: rgba(0,0,0,.8);
+}
+.tiptext{
+  fill: rgba(0,0,0,.8);
+  stroke: none;
+  font-size: 10px;
+}
+/**************************
+* FOOTER
+**************************/
+footer{
+  padding: 60px 40px;
+  font-weight: bold;
+  color: rgba(255,255,255,.8);
+  background-color: #34495e;
+}
+
+@media  (max-width: 639px){
+  .desktop-nav{
+    display: none;
+  }
+  .hero{
+    padding: 135px 40px 60px 40px;
+  }
+  .top-bar .top-bar-left,
+  .top-bar .top-bar-right{
+    width: 40%;
+  }
+}
+@media  (min-width: 640px){
+  .mobile-nav{
+    display: none;
+  }
+}

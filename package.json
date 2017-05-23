@@ -1,0 +1,31 @@
+{
+  "name": "stockwatch",
+  "version": "0.0.1",
+  "description": "fcc stock tracker challenge",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "body-parser": "^1.17.1",
+    "d3": "^4.9.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "moment": "^2.18.1",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.1"
+  },
+  "engines": {
+    "node": "6.10.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "devDependencies": {}
+}
