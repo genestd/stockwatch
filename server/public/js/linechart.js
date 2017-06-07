@@ -72,7 +72,7 @@ function lineChart(){
         .attr("class", "button")
 
       btn.append("rect")
-        .attr("width", "140px")
+        .attr("width", "150px")
         .attr("height", "40px")
         .attr("x", 0 - margin.left +21)
         .attr("y", 0 - margin.top)
@@ -82,10 +82,13 @@ function lineChart(){
             d3.event.stopPropagation()
             useAdjustedPrices = !useAdjustedPrices
             title = "Stock Prices - " + (useAdjustedPrices ? "adjusted for splits" : "unadjusted for splits")
+            d3.selectAll("text.pricetext").text(function(){ return useAdjustedPrices ? "Use Unadjusted Prices": "Use Adjusted Prices"})
             drawChart()
         })
       btn.append("text")
+        .attr("class", "pricetext")
         .attr("y", "-55")
+        .attr("x", "5")
         .text("Use Adjusted Prices")
 
       /********************************************************/
